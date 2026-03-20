@@ -39,7 +39,7 @@ const updateTipo = async (req, res) => {
     const tipo = await Tipo.findByIdAndUpdate(
       req.params.id,
       { nombre, descripcion },
-      { new: true, runValidators: true }
+      { returnDocument: 'after', runValidators: true }  // ✅ corregido
     );
     if (!tipo) return res.status(404).json({ ok: false, mensaje: 'Tipo no encontrado' });
     res.status(200).json({ ok: true, mensaje: 'Tipo actualizado exitosamente', data: tipo });

@@ -97,7 +97,7 @@ const updateMedia = async (req, res) => {
     const media = await Media.findByIdAndUpdate(
       req.params.id,
       { serial, titulo, sinopsis, urlPelicula, imagenPortada, anioEstreno, genero, director, productora, tipo },
-      { new: true, runValidators: true }
+      { returnDocument: 'after', runValidators: true }  // ✅ corregido deprecated
     )
       .populate('genero', 'nombre estado')
       .populate('director', 'nombres estado')
@@ -124,4 +124,5 @@ const deleteMedia = async (req, res) => {
     res.status(500).json({ ok: false, mensaje: 'Error al eliminar la media', error: error.message });
   }
 };
+
 module.exports = { getMedias, getMediaById, createMedia, updateMedia, deleteMedia };
