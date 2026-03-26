@@ -1,4 +1,15 @@
+# Dependencias
 node_modules/
+
+# Archivos de entorno
 .env
-backend/node_modules
-backend/.env
+
+# Builds
+build/
+dist/
+
+# Logs
+npm-debug.log*
+
+# Sistema
+.DS_Store
