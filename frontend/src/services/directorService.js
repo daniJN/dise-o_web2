@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const URL = "http://localhost:4000/api/directores";
+const URL = `${process.env.REACT_APP_API_URL}/directores`;
 
 export const getDirectores = () => axios.get(URL);
 
