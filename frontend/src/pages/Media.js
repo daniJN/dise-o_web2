@@ -3,7 +3,7 @@ import axios from "axios";
 
 function Media(){
 
-  const API = "http://localhost:4000/api/medias";
+  const API = `${process.env.REACT_APP_API_URL}/medias`;
 
   const [medias, setMedias] = useState([]);
   const [generos, setGeneros] = useState([]);
