@@ -3,7 +3,7 @@ import axios from "axios";
 
 function Productora(){
 
-  const API = "http://localhost:4000/api/productoras";
+  const API = `${process.env.REACT_APP_API_URL}/productoras`;
 
   const [productoras, setProductoras] = useState([]);
   const [nombre, setNombre] = useState("");
